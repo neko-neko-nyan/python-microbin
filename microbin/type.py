@@ -7,7 +7,7 @@ DEFAULT_MAGIC = 0x0000
 
 
 class Flags(enum.IntFlag):
-    pass
+    _UNUSED = 0
 
 
 class Type(enum.IntEnum):

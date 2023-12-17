@@ -48,7 +48,7 @@ class Writer:
 
         bits = value.bit_length()
         i = 0
-        while bits > 4 and i < 5:
+        while bits > 4 - i and i < 5:
             bits -= 8
             i += 1
         

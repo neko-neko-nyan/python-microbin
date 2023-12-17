@@ -101,11 +101,11 @@ class Reader:
             return False
 
         if tag == Type.FLOAT16:
-            return struct.unpack('>e', self._read(2))
+            return struct.unpack('>e', self._read(2))[0]
         if tag == Type.FLOAT32:
-            return struct.unpack('>f', self._read(4))
+            return struct.unpack('>f', self._read(4))[0]
         if tag == Type.FLOAT64:
-            return struct.unpack('>d', self._read(8))
+            return struct.unpack('>d', self._read(8))[0]
         
         if tag == Type.RATIONAL:
             raise NotImplementedError()  # TODO
