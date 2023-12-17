@@ -5,7 +5,11 @@ import io
 from microbin.type import Type, Flags, DEFAULT_MAGIC
 
 
-__all__ = ['DecodeError', 'Reader', 'load', 'load_iter', 'load_first', 'load_all', 'loads', 'loads_iter', 'loads_first', 'loads_all']
+__all__ = [
+    'DecodeError', 'Reader',
+    'load', 'load_iter', 'load_first', 'load_all',
+    'loads', 'loads_iter', 'loads_first', 'loads_all'
+]
 
 
 class DecodeError(Exception):

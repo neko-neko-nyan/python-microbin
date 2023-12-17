@@ -84,20 +84,20 @@ class Writer:
         self._fp.write(value)
     
     def write_none(self, *, _globl=True):
-        self._write_object_header(Type.NONE, None, _globl)
+        self._write_object_header(Type.NONE, 0, _globl)
 
     def write_bool(self, value: bool, *, _globl=True):
-        self._write_object_header(Type.TRUE if value else Type.FALSE, None, _globl)
+        self._write_object_header(Type.TRUE if value else Type.FALSE, 0, _globl)
     
     def write_float(self, value: float, *, size: int = 64, _globl=True):
         if size == 16:
-            self._write_object_header(Type.FLOAT16, None, _globl)
+            self._write_object_header(Type.FLOAT16, 0, _globl)
             self._fp.write(struct.pack('>e', value))
         elif size == 32:
-            self._write_object_header(Type.FLOAT32, None, _globl)
+            self._write_object_header(Type.FLOAT32, 0, _globl)
             self._fp.write(struct.pack('>f', value))
         elif size == 64:
-            self._write_object_header(Type.FLOAT64, None, _globl)
+            self._write_object_header(Type.FLOAT64, 0, _globl)
             self._fp.write(struct.pack('>d', value))
         else:
             raise ValueError(f"Float size must be 16, 32 or 64, not {size}")

@@ -51,11 +51,12 @@ def get_stats(file):
     return objects_size, objects_count, total_size, total_count
 
 
-
 def main():
-    parser = argparse.ArgumentParser('microbin.mbstart', description='Analyze MicroBIN file', epilog='(c) NekoNekoNyan <me@neko-dev.ru>, 2023')
+    parser = argparse.ArgumentParser('microbin.mbstart', description='Analyze MicroBIN file',
+                                     epilog='(c) NekoNekoNyan <me@neko-dev.ru>, 2023')
     parser.add_argument('-V', '--version', action='version', version=microbin.__version__)
-    parser.add_argument('-s', '--sort', action='store', choices=('count', 'size', 'bpo'), default='size', help='set field to sort (default: size)')
+    parser.add_argument('-s', '--sort', action='store', choices=('count', 'size', 'bpo'), default='size',
+                        help='set field to sort (default: size)')
     parser.add_argument('file', type=argparse.FileType('rb'), help='MicroBIN file to analyze')
     
     args = parser.parse_args()
